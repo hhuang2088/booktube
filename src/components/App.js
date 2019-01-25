@@ -1,6 +1,7 @@
 import React from 'react';
 import googleBooks from '../apis/googleBooks';
 import Searchbar from './Searchbar';
+import BookList from './BookList';
 
 class App extends React.Component {
 	state = {books: []};
@@ -18,6 +19,7 @@ class App extends React.Component {
 		return (
 			<div className="ui container">
 				<Searchbar onFormSubmit={this.onFormSubmit}/>
+				<BookList books={this.state.books} />
 			</div>
 		)
 	}
