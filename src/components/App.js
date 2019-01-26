@@ -12,7 +12,8 @@ class App extends React.Component {
 				q: term
 			}
 		})
-		console.log(response);
+		console.log(response.data.items);
+		this.setState({books: response.data.items});
 	};
 
 	render() {
