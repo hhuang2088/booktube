@@ -33,7 +33,6 @@ const getBookInfo = (book) => {
 }
 
 const BookItem = ({book}) => {
-	console.log(book);
 	const bookInfo = getBookInfo(book);
 	return(
 		<div className="book-item item">
