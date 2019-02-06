@@ -3,3 +3,5 @@
 1. React
 2. Semantic-UI
 3. Axios
+4. Jest
+5. Enzyme
