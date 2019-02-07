@@ -1,5 +1,5 @@
 import React from 'react';
-import './BookItem.css';
+import 'components/BookItem.css';
 
 const getBookInfo = (book) => {
 	const bookInfo = {

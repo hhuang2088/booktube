@@ -1,5 +1,5 @@
 import React from 'react';
-import BookItem from './BookItem';
+import BookItem from 'components/BookItem';
 
 const BookList = ({books}) => {
 	if (!books) {

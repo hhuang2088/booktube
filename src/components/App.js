@@ -1,7 +1,7 @@
 import React from 'react';
-import googleBooks from '../apis/googleBooks';
-import Searchbar from './Searchbar';
-import BookList from './BookList';
+import googleBooks from 'apis/googleBooks';
+import Searchbar from 'components/Searchbar';
+import BookList from 'components/BookList';
 
 class App extends React.Component {
 	state = {books: []};
