@@ -23,4 +23,4 @@ const BookItem = ({book}) => {
 	)
 }
 
-export default BookItem
+export default BookItem;
