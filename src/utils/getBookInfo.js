@@ -6,6 +6,8 @@ const getBookInfo = (book) => {
 		title: '',
 		infoLink: ''
 	};
+	if (book)
+	{
 		if (book.volumeInfo)
 		{
 			if (book.volumeInfo.authors) {
@@ -25,6 +27,7 @@ const getBookInfo = (book) => {
 			if (book.volumeInfo.infoLink) {
 				bookInfo.infoLink = book.volumeInfo.infoLink;
 			}
+		}
 	}
 	return (bookInfo);
 }
