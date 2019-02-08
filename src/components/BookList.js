@@ -9,7 +9,7 @@ const BookList = ({books}) => {
 		return <div>Enter a search term</div>;
 	}
 	const displayBooks = books.map((book) => {
-		return(<BookItem book={book} key={book.id}/>)
+		return(<BookItem book={book} key={book.id} />)
 	})
 	return(
 		<div className="ui relaxed celled list">
