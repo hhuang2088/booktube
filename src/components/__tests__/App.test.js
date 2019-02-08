@@ -15,9 +15,10 @@ afterEach(() => {
 })
 
 it('returns a div with className ui container', () => {
-	expect(wrapper.find('div').length).toEqual(1);
-	expect(wrapper.find('div').hasClass('ui')).toBeTruthy();
-	expect(wrapper.find('div').hasClass('container')).toBeTruthy();
+	const div = wrapper.find('div');
+	expect(div.length).toEqual(1);
+	expect(div.hasClass('ui')).toBeTruthy();
+	expect(div.hasClass('container')).toBeTruthy();
 })
 
 it('shows a Searchbar', () => {
@@ -29,8 +30,9 @@ it('shows a BookList', () => {
 })
 
 it('has a books state that is set to an empty array', () => {
-	expect(wrapper.state().books).toBeTruthy();
-	expect(wrapper.state().books.length).toEqual(0);
+	const books = wrapper.state().books
+	expect(books).toBeTruthy();
+	expect(books.length).toEqual(0);
 })
 
 it('has an onFormSubmit method', () => {
