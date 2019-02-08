@@ -2,15 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Searchbar from 'components/Searchbar';
 
-let wrapper;
-
-beforeEach(() => {
-	wrapper = shallow(<Searchbar />);
-});
-
-afterEach(() => {
-	wrapper.unmount();
-})
+const wrapper = shallow(<Searchbar />);
 
 it('has two div', () => {
 	expect(wrapper.find('div').length).toEqual(2);

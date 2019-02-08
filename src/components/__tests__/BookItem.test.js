@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import BookItem from 'components/BookItem';
 
-const wrapper = shallow(<BookItem />);
+const wrapper = shallow(<BookItem />)
 
 describe('the div tags', () => {
 	it('has three divs', () => {

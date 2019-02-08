@@ -4,15 +4,7 @@ import App from 'components/App';
 import Searchbar from 'components/Searchbar';
 import BookList from 'components/BookList';
 
-let wrapper;
-
-beforeEach(() => {
-	wrapper = shallow(<App />)
-});
-
-afterEach(() => {
-	wrapper.unmount();
-})
+const wrapper = shallow(<App />);
 
 it('returns a div with className ui container', () => {
 	const div = wrapper.find('div');
