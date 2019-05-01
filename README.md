@@ -1,4 +1,4 @@
-## Google Books API app for 8th Light Application
+## Google Books API app
 ### Tools Used:
 1. React
 2. Semantic-UI
