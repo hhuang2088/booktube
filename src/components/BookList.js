@@ -8,7 +8,8 @@ const BookList = ({books}) => {
 	if (books.length === 0) {
 		return <div>Enter a search term</div>;
 	}
-	const displayBooks = books.map((book) => {
+	const firstFiveBooks = books.slice(0, 5);
+	const displayBooks = firstFiveBooks.map((book) => {
 		return(<BookItem book={book} key={book.id} />)
 	})
 	return(
