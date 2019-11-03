@@ -1,7 +1,7 @@
 import React from 'react';
 import BookItem from 'components/BookItem';
 
-const BookList = ({books}) => {
+const BookList = ({ books, addBookToReadingList }) => {
 	if (!books) {
 		return <div>Books not found, please enter another search term</div>;
 	}
@@ -10,7 +10,13 @@ const BookList = ({books}) => {
 	}
 	const firstFiveBooks = books.slice(0, 5);
 	const displayBooks = firstFiveBooks.map((book) => {
-		return(<BookItem book={book} key={book.id} />)
+		return(
+			<BookItem 
+				book={book} 
+				key={book.id} 
+				addBookToReadingList={addBookToReadingList} 
+			/>
+		)
 	})
 	return(
 		<div className="ui relaxed celled list">

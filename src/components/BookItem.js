@@ -2,8 +2,13 @@ import React from 'react';
 import getBookInfo from 'utils/getBookInfo';
 import './BookItem.css';
 
-const BookItem = ({book}) => {
+const BookItem = ({ book, addBookToReadingList }) => {
 	const bookInfo = getBookInfo(book);
+	const onButtonClick = (event) => {
+		event.preventDefault();
+		const bookInfo = getBookInfo(book);
+		addBookToReadingList(bookInfo);
+	}
 	return(
 		<div className="book-item item">
 			<img
@@ -17,6 +22,8 @@ const BookItem = ({book}) => {
 					Author(s): {bookInfo.author.join(', ')}
 					<br />
 					Publisher: {bookInfo.publisher}
+					<br />
+					<button onClick={onButtonClick}>Add to Reading List</button>
 				</div>
 			</div>
 		</div>

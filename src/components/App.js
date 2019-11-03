@@ -4,7 +4,18 @@ import Searchbar from 'components/Searchbar';
 import BookList from 'components/BookList';
 
 class App extends React.Component {
-	state = {books: []};
+	state = {
+		books: [],
+		readingList: [],
+	};
+
+	addBookToReadingList = (book) => {
+		const newReadingList = this.state.readingList;
+		
+		newReadingList.push(book);
+		this.setState({ readingList: newReadingList });
+		console.log(this.state.readingList);
+	};
 
 	onFormSubmit = async (term) => {
 		const response = await googleBooks.get('volumes',{
@@ -19,10 +30,13 @@ class App extends React.Component {
 		return (
 			<div className="ui container">
 				<Searchbar onFormSubmit={this.onFormSubmit}/>
-				<BookList books={this.state.books} />
+				<BookList 
+					books={this.state.books} 
+					addBookToReadingList={this.addBookToReadingList}
+				/>
 			</div>
 		)
-	}
+	};
 }
 
 export default App;
