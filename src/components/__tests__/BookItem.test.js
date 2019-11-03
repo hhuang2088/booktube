@@ -23,8 +23,8 @@ describe('the div tags', () => {
 
 	it('the div with the class "book-item" and the div with the class "item" are the same div', () => {
 		expect(wrapper.find('.item')).toEqual(wrapper.find('.book-item'));
-	})
-})
+	});
+});
 
 describe('the img tag', () =>{
 	const img = wrapper.find('img');
@@ -39,6 +39,32 @@ describe('the img tag', () =>{
 
 	it('has the class "image"', () => {
 		expect(img.hasClass('image')).toBeTruthy();
+	});
+
+	it('has a button', () => {
+		expect(wrapper.find('button').length).toEqual(1);
+	});
+});
+
+describe('the Add to Reading List Button', () => {
+	const button = wrapper.find('button');
+
+	it('the button has the text "Add to Reading List"', () => {
+		const button = wrapper.find('button');
+
+		expect(button.text()).toEqual("Add to Reading List");
+	});
+
+	it('has the class "ui"', () => {
+		expect(button.hasClass('ui'));
+	});
+
+	it('has the class "positive"', () => {
+		expect(button.hasClass('positive'));
+	});
+
+	it('has the class "button"', () => {
+		expect(button.hasClass('button'));
 	});
 });
 
