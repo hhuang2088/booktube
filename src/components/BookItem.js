@@ -23,7 +23,7 @@ const BookItem = ({ book, addBookToReadingList }) => {
 					<br />
 					Publisher: {bookInfo.publisher}
 					<br />
-					<button onClick={onButtonClick}>Add to Reading List</button>
+					<button className="positive ui button" onClick={onButtonClick}>Add to Reading List</button>
 				</div>
 			</div>
 		</div>
