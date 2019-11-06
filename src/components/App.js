@@ -61,6 +61,8 @@ class App extends React.Component {
             <ReadingList
               readingList={this.state.readingList}
               removeBookFromReadingList={this.removeBookFromReadingList}
+							isReadingListShowing={this.state.isReadingListShowing}
+							toggleReadingList={this.toggleReadingList}
             />
           </div>
         </div>

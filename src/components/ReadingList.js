@@ -1,21 +1,46 @@
 import React from 'react';
 import ReadingItem from './ReadingItem';
 
-const ReadingList = ({ readingList, removeBookFromReadingList }) => {
+const ReadingList = ({
+  readingList,
+  removeBookFromReadingList,
+  isReadingListShowing,
+  toggleReadingList,
+}) => {
   const renderReadingItems = () => {
-    return readingList.map(book => {
-      return (
-        <ReadingItem
-          book={book}
-          removeBookFromReadingList={removeBookFromReadingList}
-        />
-      );
-    });
+    if (isReadingListShowing) {
+      if (readingList.length === 0) {
+        return <div className="ui center aligned segment"><i>Reading List is empty</i></div>;
+      } else {
+        return readingList.map(book => {
+          return (
+            <ReadingItem
+              book={book}
+              removeBookFromReadingList={removeBookFromReadingList}
+            />
+          );
+        });
+      }
+    }
+  };
+
+  const renderHeading = () => {
+    if (isReadingListShowing) {
+      return 'Hide Reading List';
+    } else {
+      return 'Show Reading List';
+    }
   };
 
   return (
-    <div>
-      <div className="ui center aligned segment">Reading List</div>
+    <div className="ui segments">
+      <div
+        className="ui center aligned segment"
+        onClick={() => toggleReadingList()}
+        style={{ cursor: 'pointer' }}
+      >
+        {renderHeading()}
+      </div>
       {renderReadingItems()}
     </div>
   );

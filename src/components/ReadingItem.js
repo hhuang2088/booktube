@@ -1,14 +1,18 @@
 import React from 'react';
 
 const ReadingItem = ({ book, removeBookFromReadingList }) => {
-  const onButtonClick = (event) => {
+  const onButtonClick = event => {
     event.preventDefault();
     removeBookFromReadingList(book);
-  }
+  };
   return (
-    <div>
-      <a href={book.infoLink}>{book.title}</a>
-      <button onClick={onButtonClick}>Remove</button>
+    <div className="ui segment">
+      <a href={book.infoLink} target="_blank" rel="noopener noreferrer">
+        {book.title}
+      </a>
+      <br />
+      <p>{`By: ${book.author}`}</p>
+      <button className="ui red basic button" onClick={onButtonClick}>Remove</button>
     </div>
   );
 };
