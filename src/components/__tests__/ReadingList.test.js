@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ReadingList from '../ReadingList';
+import ReadingList from 'components/ReadingList';
 
 let wrapper = shallow(<ReadingList />);
 

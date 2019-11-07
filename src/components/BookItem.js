@@ -4,11 +4,12 @@ import './BookItem.css';
 
 const BookItem = ({ book, addBookToReadingList }) => {
 	const bookInfo = getBookInfo(book);
+
 	const onButtonClick = (event) => {
 		event.preventDefault();
-		const bookInfo = getBookInfo(book);
-		addBookToReadingList(bookInfo);
+		addBookToReadingList(book);
 	}
+
 	return(
 		<div className="book-item item">
 			<img

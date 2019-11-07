@@ -1,5 +1,5 @@
 import React from 'react';
-import ReadingItem from './ReadingItem';
+import ReadingItem from 'components/ReadingItem';
 
 const ReadingList = ({
   readingList,
