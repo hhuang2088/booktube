@@ -1,35 +1,25 @@
-const getBookInfo = book => {
+import noImage from '../images/noImage.jpg';
+
+export default book => {
   const bookInfo = {
-    author: [],
-    image:
-      'http://www.formica.com/us/~/media/global-images/ui/noimageavailable.png',
+    authors: [],
+    image: noImage,
     publisher: '',
     title: '',
     infoLink: '',
   };
 
-  if (book) {
-    if (book.volumeInfo) {
-      if (book.volumeInfo.authors) {
-        bookInfo.author = book.volumeInfo.authors;
-      }
-      if (book.volumeInfo.imageLinks) {
-        if (book.volumeInfo.imageLinks.thumbnail) {
-          bookInfo.image = book.volumeInfo.imageLinks.thumbnail;
-        }
-      }
-      if (book.volumeInfo.publisher) {
-        bookInfo.publisher = book.volumeInfo.publisher;
-      }
-      if (book.volumeInfo.title) {
-        bookInfo.title = book.volumeInfo.title;
-      }
-      if (book.volumeInfo.infoLink) {
-        bookInfo.infoLink = book.volumeInfo.infoLink;
-      }
-    }
+  if (book === undefined) {
+    return bookInfo;
+  }
+
+  if (book.volumeInfo) {
+    const { authors, imageLinks, publisher, title, infoLink } = book.volumeInfo;
+    bookInfo.authors = authors ? authors : bookInfo.authors;
+    bookInfo.image = imageLinks ? imageLinks.thumbnail : bookInfo.image;
+    bookInfo.publisher = publisher ? publisher : bookInfo.publisher;
+    bookInfo.title = title ? title : bookInfo.title;
+    bookInfo.infoLink = infoLink ? infoLink : bookInfo.title;
   }
   return bookInfo;
 };
-
-export default getBookInfo;

@@ -7,26 +7,32 @@ const ReadingList = ({
   isReadingListShowing,
   toggleReadingList,
 }) => {
+  const renderEmptyReadingList = () => {
+    return (
+      <div className="ui center aligned segment">
+        <i>Reading List is empty</i>
+      </div>
+    );
+  };
+
+  const renderPopulatedReadingList = () => {
+    return readingList.map(book => {
+      return (
+        <ReadingItem
+          book={book}
+          removeBookFromReadingList={removeBookFromReadingList}
+          key={book.id}
+        />
+      );
+    });
+  };
   const renderReadingItems = () => {
-    if (isReadingListShowing) {
-      if (readingList.length === 0) {
-        return (
-          <div className="ui center aligned segment">
-            <i>Reading List is empty</i>
-          </div>
-        );
-      } else {
-        return readingList.map(book => {
-          return (
-            <ReadingItem
-              book={book}
-              removeBookFromReadingList={removeBookFromReadingList}
-              key={book.id}
-            />
-          );
-        });
-      }
+    if (isReadingListShowing && readingList.length === 0) {
+      return renderEmptyReadingList();
+    } else if (isReadingListShowing && readingList.length > 0) {
+      return renderPopulatedReadingList();
     }
+    return;
   };
 
   const renderHeading = () => {
