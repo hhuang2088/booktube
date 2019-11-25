@@ -10,7 +10,11 @@ const ReadingList = ({
   const renderReadingItems = () => {
     if (isReadingListShowing) {
       if (readingList.length === 0) {
-        return <div className="ui center aligned segment"><i>Reading List is empty</i></div>;
+        return (
+          <div className="ui center aligned segment">
+            <i>Reading List is empty</i>
+          </div>
+        );
       } else {
         return readingList.map(book => {
           return (

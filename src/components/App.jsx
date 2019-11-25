@@ -52,7 +52,7 @@ class App extends React.Component {
         <div className="row">
           <div className="ten wide column">
             <Searchbar onFormSubmit={this.onFormSubmit} />
-						<BookList
+            <BookList
               books={this.state.books}
               addBookToReadingList={this.addBookToReadingList}
             />
@@ -61,8 +61,8 @@ class App extends React.Component {
             <ReadingList
               readingList={this.state.readingList}
               removeBookFromReadingList={this.removeBookFromReadingList}
-							isReadingListShowing={this.state.isReadingListShowing}
-							toggleReadingList={this.toggleReadingList}
+              isReadingListShowing={this.state.isReadingListShowing}
+              toggleReadingList={this.toggleReadingList}
             />
           </div>
         </div>

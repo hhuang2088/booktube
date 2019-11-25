@@ -39,5 +39,5 @@ describe('the wrapper component', () => {
     it('has the class segment', () => {
       expect(innerDiv.hasClass('segment')).toBeTruthy();
     });
-  })
+  });
 });

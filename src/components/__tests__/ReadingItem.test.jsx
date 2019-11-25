@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import ReadingItem from 'components/ReadingItem';
-import { isTSAnyKeyword } from '@babel/types';
 
 let wrapper = shallow(<ReadingItem />);
 

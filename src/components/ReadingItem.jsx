@@ -15,7 +15,9 @@ const ReadingItem = ({ book, removeBookFromReadingList }) => {
       </a>
       <br />
       <p>{`By: ${bookInfo.author}`}</p>
-      <button className="ui red basic button" onClick={onButtonClick}>Remove</button>
+      <button className="ui red basic button" onClick={onButtonClick}>
+        Remove
+      </button>
     </div>
   );
 };
