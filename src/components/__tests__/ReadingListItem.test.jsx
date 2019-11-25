@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ReadingItem from 'components/ReadingItem';
+import ReadingListItem from 'components/ReadingListItem';
 
-let wrapper = shallow(<ReadingItem />);
+let wrapper = shallow(<ReadingListItem />);
 
 describe('the ReadingItem component', () => {
   it('has a single div', () => {

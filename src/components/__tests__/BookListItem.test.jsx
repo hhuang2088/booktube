@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import BookItem from 'components/BookItem';
+import BookListItem from 'components/BookListItem';
 
-const wrapper = shallow(<BookItem />);
+const wrapper = shallow(<BookListItem />);
 
 describe('the div tags', () => {
   it('has three divs', () => {
@@ -49,10 +49,10 @@ describe('the img tag', () => {
 describe('the Add to Reading List Button', () => {
   const button = wrapper.find('button');
 
-  it('the button has the text "Add to Reading List"', () => {
+  it('the button has the text "Add Book to Reading List"', () => {
     const button = wrapper.find('button');
 
-    expect(button.text()).toEqual('Add to Reading List');
+    expect(button.text()).toEqual('Add Book to Reading List');
   });
 
   it('has the class "ui"', () => {
