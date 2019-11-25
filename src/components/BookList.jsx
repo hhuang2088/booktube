@@ -1,5 +1,5 @@
 import React from 'react';
-import BookItem from 'components/BookItem';
+import BookListItem from 'components/BookListItem';
 
 const BookList = ({ books, addBookToReadingList, readingList }) => {
   if (!books) {
@@ -11,7 +11,7 @@ const BookList = ({ books, addBookToReadingList, readingList }) => {
   const firstFiveBooks = books.slice(0, 5);
   const displayBooks = firstFiveBooks.map(book => {
     return (
-      <BookItem
+      <BookListItem
         book={book}
         key={book.id}
         addBookToReadingList={addBookToReadingList}

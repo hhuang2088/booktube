@@ -36,7 +36,7 @@ class App extends React.Component {
     this.setState({ readingList: newReadingList });
   };
 
-  onFormSubmit = async term => {
+  onBookSearch = async term => {
     const response = await googleBooks.get('volumes', {
       params: {
         q: term,
@@ -50,7 +50,7 @@ class App extends React.Component {
       <div className="ui grid container">
         <div className="row">
           <div className="ten wide column">
-            <Searchbar onFormSubmit={this.onFormSubmit} />
+            <Searchbar onBookSearch={this.onBookSearch} />
             <BookList
               books={this.state.books}
               addBookToReadingList={this.addBookToReadingList}

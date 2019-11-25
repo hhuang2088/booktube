@@ -1,5 +1,5 @@
 import React from 'react';
-import ReadingItem from 'components/ReadingItem';
+import ReadingListItem from 'components/ReadingListItem';
 
 const ReadingList = ({
   readingList,
@@ -18,7 +18,7 @@ const ReadingList = ({
   const renderPopulatedReadingList = () => {
     return readingList.map(book => {
       return (
-        <ReadingItem
+        <ReadingListItem
           book={book}
           removeBookFromReadingList={removeBookFromReadingList}
           key={book.id}
