@@ -1,9 +1,9 @@
-.book-item {
+.book-list-item {
   display: flex;
   align-items: center;
 }
 
-.book-item.item img {
+.book-list-item.item img {
   margin-right: 20px;
   max-width: 120px;
 }

@@ -4,7 +4,7 @@ import ReadingListItem from 'components/ReadingListItem';
 
 let wrapper = shallow(<ReadingListItem />);
 
-describe('the ReadingItem component', () => {
+describe('the ReadingListItem component', () => {
   it('has a single div', () => {
     expect(wrapper.find('div').length).toEqual(1);
   });

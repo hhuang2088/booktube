@@ -1,7 +1,7 @@
 import React from 'react';
 import getBookInfo from 'utils/getBookInfo';
 import bookIsInReadingList from 'utils/bookIsInReadingList';
-import './BookItem.css';
+import './BookListItem.css';
 
 const BookListItem = ({ book, addBookToReadingList, readingList }) => {
   const bookInfo = getBookInfo(book);
@@ -27,18 +27,22 @@ const BookListItem = ({ book, addBookToReadingList, readingList }) => {
   };
 
   return (
-    <div className="book-item item">
-      <img className="ui image" src={bookInfo.image} alt={bookInfo.title} />
-      <div className="content">
-        <a className="header" href={bookInfo.infoLink}>
-          {bookInfo.title}
-        </a>
-        <div className="description">
-          Author(s): {bookInfo.authors.join(', ')}
-          <br />
-          Publisher: {bookInfo.publisher}
-          <br />
-          {renderAddBookButton(book, readingList)}
+    <div className="book-list-item item row">
+      <div className="four wide column">
+        <img className="ui image" src={bookInfo.image} alt={bookInfo.title} />
+      </div>
+      <div className="twelve wide column">
+        <div className="content">
+          <a className="header" href={bookInfo.infoLink}>
+            {bookInfo.title}
+          </a>
+          <div className="description">
+            Author(s): {bookInfo.authors.join(', ')}
+            <br />
+            Publisher: {bookInfo.publisher}
+            <br />
+            {renderAddBookButton(book, readingList)}
+          </div>
         </div>
       </div>
     </div>
