@@ -3,7 +3,7 @@ import getBookInfo from 'utils/getBookInfo';
 import bookIsInReadingList from 'utils/bookIsInReadingList';
 import './BookItem.css';
 
-const BookItem = ({ book, addBookToReadingList, readingList }) => {
+const BookListItem = ({ book, addBookToReadingList, readingList }) => {
   const bookInfo = getBookInfo(book);
 
   const onAddBookButtonClick = event => {
@@ -45,4 +45,4 @@ const BookItem = ({ book, addBookToReadingList, readingList }) => {
   );
 };
 
-export default BookItem;
+export default BookListItem;
