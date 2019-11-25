@@ -1,7 +1,7 @@
 import React from 'react';
 import BookItem from 'components/BookItem';
 
-const BookList = ({ books, addBookToReadingList }) => {
+const BookList = ({ books, addBookToReadingList, readingList }) => {
   if (!books) {
     return <div>Books not found, please enter another search term</div>;
   }
@@ -15,6 +15,7 @@ const BookList = ({ books, addBookToReadingList }) => {
         book={book}
         key={book.id}
         addBookToReadingList={addBookToReadingList}
+        readingList={readingList}
       />
     );
   });

@@ -21,6 +21,7 @@ const ReadingList = ({
             <ReadingItem
               book={book}
               removeBookFromReadingList={removeBookFromReadingList}
+              key={book.id}
             />
           );
         });

@@ -16,7 +16,6 @@ class App extends React.Component {
 
     newReadingList.push(book);
     this.setState({ readingList: newReadingList });
-    console.log(this.state.readingList);
   };
 
   toggleReadingList = () => {
@@ -55,6 +54,7 @@ class App extends React.Component {
             <BookList
               books={this.state.books}
               addBookToReadingList={this.addBookToReadingList}
+              readingList={this.state.readingList}
             />
           </div>
           <div className="six wide column">

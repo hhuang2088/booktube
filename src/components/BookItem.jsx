@@ -1,13 +1,30 @@
 import React from 'react';
 import getBookInfo from 'utils/getBookInfo';
+import bookIsInList from 'utils/bookIsInList';
 import './BookItem.css';
 
-const BookItem = ({ book, addBookToReadingList }) => {
+const BookItem = ({ book, addBookToReadingList, readingList }) => {
   const bookInfo = getBookInfo(book);
 
   const onButtonClick = event => {
     event.preventDefault();
     addBookToReadingList(book);
+  };
+
+  const renderButton = (book, readingList) => {
+    if (bookIsInList(book, readingList)) {
+      return (
+        <button className="positive ui button" disabled>
+          Book Added
+        </button>
+      );
+    } else {
+      return (
+        <button className="positive ui button" onClick={onButtonClick}>
+          Add Book to Reading List
+        </button>
+      );
+    }
   };
 
   return (
@@ -22,9 +39,7 @@ const BookItem = ({ book, addBookToReadingList }) => {
           <br />
           Publisher: {bookInfo.publisher}
           <br />
-          <button className="positive ui button" onClick={onButtonClick}>
-            Add to Reading List
-          </button>
+          {renderButton(book, readingList)}
         </div>
       </div>
     </div>
