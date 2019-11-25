@@ -11,7 +11,7 @@ const BookList = ({ books, addBookToReadingList, readingList }) => {
   const firstFiveBooks = books.slice(0, 5);
   const displayBooks = firstFiveBooks.map(book => {
     return (
-      <div className="ui grid container">
+      <div className="ui grid">
         <BookListItem
           book={book}
           key={book.id}
